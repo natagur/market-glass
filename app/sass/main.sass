@@ -1,0 +1,85 @@
+// *,
+// *::before,
+// *::after {
+// 	box-sizing: border-box;
+// }
+body,
+header
+  font-family: "Roboto",'Open Sans', sans-serif
+  font-weight: 400
+  box-sizing: border-box
+  background: #FFF
+
+.container
+  width: 1170px
+  margin: 0 auto
+  padding-left: 30px
+  padding-right: 30px
+
+
+a
+  color: inherit
+  text-decoration: none
+  list-style-type: none
+
+
+p, h1, h2, h3
+  margin: 0
+
+ul
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+
+img
+  max-width: 100%
+
+.calculator
+  &__title
+    font-weight: 700
+    font-size: 40px
+    line-height: 47px
+    color: #000000
+    margin-top: 150px
+    margin-bottom: 80px
+    text-align: center
+  &__block
+    background: #F8F8F8
+    border-radius: 16px
+    padding: 10px
+    max-height: 315px
+    width: 33%
+  &__block_border
+    padding: 35px 0 166px 39px
+    background: #FFFFFF
+    border: 1px solid #E9E9E9
+    border-radius: 16px
+  &__caption
+    font-weight: 500
+    font-size: 22px
+    line-height: 26px
+    color: #000000
+    margin-bottom: 20px
+  &__top,
+  &__bottom
+    margin-bottom: 10px
+    display: flex
+    align-items: self-start
+  &__select
+    display: block
+  input + label
+    font-weight: 400
+    font-size: 15px
+    line-height: 24px
+    color: #646464
+  input:checked + label
+    color: #000000
+  input[type="radio"]
+    width: 20px
+    height: 20px
+    margin-right: 10px
+
+    
+
+
