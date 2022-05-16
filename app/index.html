@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link href="css/app.min.css" rel="stylesheet" type="text/css">
+  <script src="js/app.min.js" type="text/javascript"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -24,16 +25,16 @@
                 <h3 class="calculator__caption">
                   Материал
                 </h3>
-                <div class="calculator__select">
+                <div class="calculator__select_choice">
                   <div class="calculator__top">
-                    <input type="radio" name="material">
-                    <label for="">
+                    <input id="input1" type="radio" name="material">
+                    <label data-id="1" for="input1">
                       Стекло
                     </label>
                   </div>
                   <div class="calculator__bottom">
-                    <input type="radio" name="material">
-                    <label for="">
+                    <input id="input2" type="radio" name="material">
+                    <label data-id="2" for="input2">
                       Зеркало
                     </label>
                   </div>
@@ -41,61 +42,346 @@
               </div>
             </div>
             <div class="calculator__block">
-              <div class="calculator__block_border">
-                <h3 class="calculator__caption">
+              <div class="calculator__plashka_bg">
+                <div class="calculator__descr">
+                  <p class="calculator__descr_number">
+                    2
+                  </p>
+                </div>
+                <p class="calculator__caption_descr">
                   Вид
-                </h3>
-                <div class="calculator__select">
-                  <div class="calculator__top">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Прозрачное
-                    </label>
+                </p>
+              </div>
+              <div class="calculator__plashka">
+                <div class="calculator__block_border">
+                  <h3 class="calculator__caption">
+                    Вид
+                  </h3>
+                  <div class="calculator__select active">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="3" for="">
+                        Прозрачное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="4" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="5" for="">
+                        Матовое (Мателюкс)
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="6" for="">
+                        Серое
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="7" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
                   </div>
-                  <div class="calculator__bottom">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Осветленное
-                    </label>
-                  </div>
-                  <div class="calculator__top">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Матовое (Мателюкс)
-                    </label>
-                  </div>
-                  <div class="calculator__bottom">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Серое
-                    </label>
-                  </div>
-                  <div class="calculator__bottom">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Бронза
-                    </label>
+                  <div class="calculator__select">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="8" for="">
+                        Серебро
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="9" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="10" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="11" for="">
+                        Графит
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="calculator__block">
-              <div class="calculator__block_border">
-                <h3 class="calculator__caption">
-                  Материал
-                </h3>
-                <div class="calculator__select">
-                  <div class="calculator__top">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Стекло
-                    </label>
+              <div class="calculator__plashka_bg">
+                <div class="calculator__descr">
+                  <p class="calculator__descr_number">
+                    3
+                  </p>
+                </div>
+                <p class="calculator__caption_descr">
+                  Толщина
+                </p>
+              </div>
+              <div class="calculator__plashka">
+                <div class="calculator__block_border">
+                  <h3 class="calculator__caption">
+                    Толщина
+                  </h3>
+                  <div class="calculator__select active">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="12" for="">
+                        Прозрачное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="13" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="14" for="">
+                        Матовое (Мателюкс)
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="15" for="">
+                        Серое
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="16" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
                   </div>
-                  <div class="calculator__bottom">
-                    <input type="radio" name="material">
-                    <label for="">
-                      Зеркало
-                    </label>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__block">
+              <div class="calculator__plashka">
+                <div class="calculator__plashka_bg">
+                  <div class="calculator__descr">
+                    <p class="calculator__descr_number">
+                      4
+                    </p>
+                  </div>
+                  <p class="calculator__caption_descr">
+                    Форма изделния
+                  </p>
+                </div>
+                <div class="calculator__block_border">
+                  <h3 class="calculator__caption">
+                    Форма изделния
+                  </h3>
+                  <div class="calculator__select active">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="17" for="">
+                        Прозрачное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="17" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="18" for="">
+                        Матовое (Мателюкс)
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="19" for="">
+                        Серое
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="20" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__block">
+              <div class="calculator__plashka">
+                <div class="calculator__plashka_bg">
+                  <div class="calculator__descr">
+                    <p class="calculator__descr_number">
+                      5
+                    </p>
+                  </div>
+                  <p class="calculator__caption_descr">
+                    Обработка
+                  </p>
+                </div>
+                <div class="calculator__block_border">
+                  <h3 class="calculator__caption">
+                    Обработка
+                  </h3>
+                  <div class="calculator__select active">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="21" for="">
+                        Прозрачное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="22" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="23" for="">
+                        Матовое (Мателюкс)
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="24" for="">
+                        Серое
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="25" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__block">
+              <div class="calculator__plashka">
+                <div class="calculator__plashka_bg">
+                  <div class="calculator__descr">
+                    <p class="calculator__descr_number">
+                      6
+                    </p>
+                  </div>
+                  <p class="calculator__caption_descr">
+                    Дополнительно
+                  </p>
+                </div>
+                <div class="calculator__block_border">
+                  <h3 class="calculator__caption">
+                    Дополнительно
+                  </h3>
+                  <div class="calculator__select active">
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="26" for="">
+                        Прозрачное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="27" for="">
+                        Осветленное
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__top">
+                      <input type="radio" name="material">
+                      <label data-id="28" for="">
+                        Матовое (Мателюкс)
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="29" for="">
+                        Серое
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                    <div class="calculator__bottom">
+                      <input type="radio" name="material">
+                      <label data-id="30" for="">
+                        Бронза
+                      </label>
+                      <img class="calculator__icon" src="/img/question.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__block calculator__block_bottom">
+              <div class="calculator__plashka">
+                <div class="calculator__plashka_bg">
+                  <div class="calculator__descr calculator__descr_bottom">
+                    <p class="calculator__descr_number calculator__descr_numbers">
+                      7
+                    </p>
+                  </div>
+                  <p class="calculator__caption_descr">
+                    Стоимость заказа
+                  </p>
+                </div>
+                <div class="calculator__block_border calculator__block_choice">
+                  <div class="calculator__left">
+                    <p class="calculator__description">
+                      Стоимость заказа
+                    </p>
+                    <p class="calculator__desc">
+                      Оставьте заявку на расчет цены
+                    </p>
+                  </div>
+                  <div class="calculator__center">
+                    <a href="#" class="btn">
+                      <img class="btn-icon" src="/img/check.svg">
+                      Сделать заказ
+                    </a>
+                  </div>
+                  <div class="calculator__right">
+                    <a href="#" class="calculator__reset">
+                      Сбросить текущий расчет
+                    </a>
                   </div>
                 </div>
               </div>
