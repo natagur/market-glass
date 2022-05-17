@@ -60,7 +60,24 @@ img
     &:nth-child(3n),
     &:last-child
       margin-right: 0
+    &:not(:first-child)
+      .calculator__top:hover,
+      .calculator__bottom:hover
+        &::before
+          content: ""
+          background: url("/img/question-blue.svg")
+          background-repeat: no-repeat
+          display: block
+          position: absolute
+          right: 30px
+          cursor: pointer
+          width: 22px
+          height: 22px
+          z-index: 1
+  &__block.invisible-bg .calculator__plashka_bg
+    display: none
   &__block_border
+    overflow: hidden
     padding-left: 29px 
     background: #FFFFFF
     border: 1px solid #E9E9E9
@@ -79,6 +96,7 @@ img
     display: flex
     align-items: self-start
     position: relative
+    transition: 0.2s
   &__icon
     position: absolute
     right: 30px
@@ -89,6 +107,8 @@ img
     display: block
   &__select
     display: none
+    .invisible
+      display: none
   input + label
     font-weight: 400
     font-size: 15px
@@ -156,17 +176,32 @@ img
     border-radius: 28px
     display: flex
     justify-content: center
+    align-items: center
+    transition: 0.2s
+    &:hover
+      background: #1771BC
   .btn-icon
     background: url("/img/check.svg")
     width: 14px
     height: 10px
     display: block
     padding-right: 10px
+    background-repeat: no-repeat
   &__reset
     font-weight: 400
     font-size: 15px
     line-height: 24px
     color: #BBC8D1
+    &:hover
+      color: #EA1818
+      &::before
+        content: ""
+        background: url("/img/reset-red.svg")
+        width: 8px
+        height: 8px
+        display: block
+        padding-right: 8px
+        background-repeat: no-repeat
     &::before
       content: ""
       background: url("/img/reset.svg")
@@ -189,3 +224,66 @@ img
   &__descr_bottom
     margin-top: 37px
 
+@media(max-width: 768px) 
+  .calculator
+    &__block
+      width: calc(48% - 30px)
+    &__block_bottom
+      width: 100%
+      height: 215px
+@media(max-width: 576px) 
+  .calculator
+    &__block
+      width: 100%
+      margin-right: 0
+      &:first-child
+        height: 185px
+    &__block_bottom
+      width: 100%
+      height: 315px
+    &__block_choice
+      display: block
+      text-align: center
+      padding-top: 35px
+    &__left
+      margin-bottom: 20px
+    &__center
+      margin-bottom: 30px
+    &__right
+      align-items: center
+      display: flex
+    .btn
+      width: 12%
+      margin: auto  
+    &__description
+      padding-left: 0
+
+
+@media(max-width: 320px) 
+  .calculator
+    &__block
+      width: 100%
+      margin-right: 0
+      &:first-child
+        height: 165px
+    &__descr_bottom
+      margin-top: 91px
+    &__block_bottom
+      width: 100%
+      height: 265px
+    &__block_choice
+      display: block
+      text-align: center
+      padding-top: 35px
+    &__left
+      margin-bottom: 20px
+    &__center
+      margin-bottom: 30px
+    &__right
+      align-items: center
+      display: flex
+    .btn
+      width: 12%
+      margin: auto  
+    &__description
+      padding-left: 0
