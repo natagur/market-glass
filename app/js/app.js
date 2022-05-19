@@ -1,4 +1,5 @@
-let element = [];
+$(function() {
+  let element = [];
 //стекло
 element[1] = ['4a',8,9,'11a'];
 element[3] = ['4a',8,9,'11a']; 
@@ -24,7 +25,8 @@ element['11a'] = ['4',3,5,6,10,11,12,13,14,15,16];
 $(document).on ('click', '.calculator__block input', function(event){
 
   $('.calculator__block label').parent().removeClass('invisible');
-  $.each(element[$(this).parent() .find('label') .data('id')], function (i, e){
+  let id = $(this).parent() .find('label') .data('id');
+  if(element.includes(id))$.each(element[id], function (i, e){
    
     $('.calculator__block label[data-id="' + e + '"]').parent().addClass('invisible');
     
@@ -38,4 +40,20 @@ $(document).on ('click', '.calculator__block input', function(event){
   
   
   });
+
   
+  let sliderList = 5;
+  if($(document).width() < 320){
+    sliderList = 1;
+  }else if($(document).width() > 320){
+    $('.reviews__slider').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      variableWidth: true
+    });
+  
+    sliderList = 5;
+  }
+  
+});

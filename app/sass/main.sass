@@ -180,6 +180,7 @@ img
     justify-content: center
     align-items: center
     transition: 0.2s
+    white-space: nowrap
     &:hover
       background: #1771BC
   .btn-icon
@@ -225,19 +226,164 @@ img
     align-items: center
   &__descr_bottom
     margin-top: 37px
+
+  // Отзывы //
+
 .reviews
   &__title
     margin-top: 206px
     margin-bottom: 105px
+  &__slider
+    position: relative
+  &__description
+    border-radius: 16px
+    border: 10px solid #F8F8F8
+    position: relative
+    &::before
+      content: ""
+      display: block
+      width: calc(100% + 18px)
+      top: -10px
+      left: -9px
+      background: url(/img/up-border.png)
+      height: 81px
+      position: absolute
+      background-repeat: no-repeat
+      background-size: 100%
+  &__slider_clients
+    position: relative
+    padding-top: 60px
+    min-height: 410px
+    margin-right: 36px
+    width: 26vw
+    overflow: hidden
+  &__slider_avatar
+    display: block
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1
+    top: 0px
+    border-radius: 100%
+  &__border
+    border: 1px solid #E9E9E9
+    border-radius: 7px
+    padding: 81px 24px 29px 34px
+  &__slider_avatar
+    margin: auto
+  &__name
+    font-weight: 700
+    font-size: 20px
+    line-height: 23px
+    color: #000
+    margin-bottom: 6px
+    text-align: center
+  &__city
+    font-weight: 400
+    font-size: 15px
+    line-height: 18px
+    margin-bottom: 20px
+    color: #939393
+    text-align: center
+  &__desc  
+    font-weight: 400
+    font-size: 16px
+    line-height: 22px
+    color: #646464
+  &__icon_arrow
+    width: 46px !important
+    height: 46px !important
+    position: absolute
+  .slick-next
+    background: url("/img/arrow-left.svg")
+    width: 46px
+    height: 46px
+    transform: rotate(180deg)
+    background-size: 100% 
+    &::before
+      display: none
+    &:hover,
+    &:focus
+      background: url("/img/arrow-right-hover.svg")
+      transform: rotate(0deg)
+  .slick-prev
+    background: url("/img/arrow-left.svg")
+    width: 46px
+    height: 46px
+    background-size: 100% 
+    margin-left: -38px
+    &::before
+      display: none
+    &:hover,
+    &:focus
+      background: url("/img/arrow-left-hover.svg")
+
+
+  //  media // 
+
+@media(max-width: 992px) 
+  .reviews__block
+    padding: 30px
+  .reviews__slider_clients
+    width: 43vw
+  .reviews__title
+    margin-top: 60px
+    margin-bottom: 60px
+  .reviews .slick-prev
+    margin-left: -2px
+    z-index: 1
+    top: 40%
+  .reviews .slick-next
+    margin-right: 27px
+    top: 35%
+    z-index: 1
+  .container
+    width: 100%
+    padding-right: 0
+    padding-left: 0
+  .reviews__description
+    &::before
+      width: calc(100% + 22px)
+      left: -11px
+
 @media(max-width: 768px) 
   .calculator
     &__block
       width: calc(48% - 30px)
+      &:nth-child(2n)
+        margin-right: 0
     &__block_bottom
       width: 100%
       height: 215px
+    &__block_choice
+      display: block
+    &__description
+      text-align: center
+      padding-top: 30px
+      padding-left: 0
+    &__desc
+      text-align: center
+      margin-bottom: 20px
+    &__center
+      margin-left: 100px
+      margin-right: 20px
+    &__center,
+    &__right
+      display: inline-block
+  .reviews__slider
+    overflow-x: auto
+  .slick-prev,
+  .slick-next
+    display: none !important
+  .reviews__slider_clients
+    width: 52vw
+  .section__title
+    font-size: 36px
+
 @media(max-width: 576px) 
   .calculator
+    .container
+      width: 100%
     &__block
       width: 100%
       margin-right: 0
@@ -249,23 +395,42 @@ img
     &__block_choice
       display: block
       text-align: center
-      padding-top: 35px
+      padding-top: 0
     &__left
       margin-bottom: 20px
     &__center
+      margin: auto
       margin-bottom: 30px
+      display: block
     &__right
       align-items: center
       display: flex
+    &__reset
+      margin: auto
     .btn
-      width: 12%
+      width: 24%
       margin: auto  
     &__description
       padding-left: 0
-
+      padding-top: 35px
+  .reviews__slider_clients
+    width: 60vw
+  .reviews__title
+    margin-top: 40px
+    margin-bottom: 40px
+  .section__title
+    font-size: 30px
+  .container
+    width: 100%
+    padding-right: 0
+    padding-left: 0
 
 @media(max-width: 320px) 
   .calculator
+    &__title
+      font-size: 24px
+      margin-top: 30px
+      margin-bottom: 30px
     &__block
       width: 100%
       margin-right: 0
@@ -279,7 +444,7 @@ img
     &__block_choice
       display: block
       text-align: center
-      padding-top: 35px
+      padding-top: 0
     &__left
       margin-bottom: 20px
     &__center
@@ -288,7 +453,43 @@ img
       align-items: center
       display: flex
     .btn
-      width: 12%
-      margin: auto  
+      width: 46%
+      padding: 19px 52px
     &__description
       padding-left: 0
+      padding-top: 35px
+    &__reset
+      margin: auto
+  .reviews
+    &__block
+      padding: 0
+    &__title  
+      margin-top: 30px
+      margin-bottom: 30px
+      font-size: 24px
+    &__slider_clients
+      margin-right: 0
+      width: 100%
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+    &__name
+      font-size: 16px
+      line-height: 19px
+    &__desc
+      font-size: 15px
+      line-height: 20px
+    &__slider_avatar
+      margin-top: 21px
+      width: 65px
+      height: 65px
+    &__description
+      &::before
+        width: calc(100% + 15px)
+        left: -7px
+    &__border
+      padding: 46px 20px 20px 29px
+  .container
+    width: 100%
+    padding-right: 0
+    padding-left: 0
